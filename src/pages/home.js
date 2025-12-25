@@ -69,20 +69,6 @@ const Home = () => {
             </b>
           </p>
 
-          <Subheader text="tech stack" classname="homeSubheader" />
-          <p>always learning, but here's where i'm at right now!</p>
-          <TechStack img={imgs[0]} text="html" />
-          <TechStack img={imgs[1]} text="css" />
-          <TechStack img={imgs[2]} text="javascript" />
-          <TechStack img={imgs[3]} text="react" />
-          <TechStack img={imgs[10]} text="p5.js" />
-          <TechStack img={imgs[4]} text="github" />
-          <TechStack img={imgs[5]} text="VSC" />
-          {/* <TechStack img={imgs[12]} text="c++" />
-          <TechStack img={imgs[13]} text="arduino" />
-          <TechStack img={imgs[15]} text="scratch" /> */}
-          <p>in the pipeline: typescript, tailwind, node.js, SQL</p>
-
           <Subheader text="tools" classname="homeSubheader" />
           <p>a mix of coding and art-making software</p>
           <TechStack img={imgs[6]} text="milanote" />
@@ -94,6 +80,20 @@ const Home = () => {
           <TechStack img={imgs[6]} text="capcut" />
           <TechStack img={imgs[6]} text="adobe suite" />
           {/* <TechStack img={imgs[14]} text="tinkerCAD" /> */}
+
+          <Subheader text="tech stack" classname="homeSubheader" />
+          <p>always learning, but here's where i'm at right now!</p>
+          <TechStack img={imgs[0]} text="html" />
+          <TechStack img={imgs[1]} text="css" />
+          <TechStack img={imgs[2]} text="javascript" />
+          <TechStack img={imgs[3]} text="react" />
+          <TechStack img={imgs[10]} text="p5.js" />
+          <TechStack img={imgs[4]} text="github" />
+          <TechStack img={imgs[5]} text="VSC" />
+          {/* <TechStack img={imgs[12]} text="c++" />
+          <TechStack img={imgs[13]} text="arduino" />
+          <TechStack img={imgs[15]} text="scratch" /> 
+          <p>in the pipeline: typescript, tailwind, node.js, SQL</p> */}
 
           <Subheader text="contact" classname="homeSubheader" />
           <div className="email">

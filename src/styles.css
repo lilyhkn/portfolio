@@ -52,10 +52,22 @@
   font-family: Home Video Lite;
 }
 
+@font-face {
+  src: url("/assets/typographerwoodcutinitialsone.regular.ttf"),
+    format("ttf");
+  font-family: Woodcut;
+}
+
+@font-face {
+  src: url("/assets/horbse.textured.ttf"),
+    format("ttf");
+  font-family: Horbse;
+}
+
 /* Page structure */
 body {
   font-family: HK Grotesk;
-  background-image: linear-gradient(black 20%, blue, orange);
+  background-image: linear-gradient(black 20%, blue, #fff765);
   /*  replace with background image made on procreate  */
 }
 
