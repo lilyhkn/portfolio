@@ -1,9 +1,10 @@
 /* CSS variables */
 :root {
-  --color-bg: black;
-  --color-text-main: white;
-  --color-text-header: white;
-  --color-primary: white;
+  --color-orange: #d06d25;
+  --color-green: #8F822C;
+  --color-red: #580e1d;
+  --color-white: #F9EDCD;
+  --color-blue: #8ca0d6;
 }
 
 /* Basic page style resets */
@@ -14,12 +15,7 @@
   display: none !important;
 }
 
-/* Import fonts */
-@font-face {
-  src: url("https://cdn.glitch.global/9136e073-9a44-4dec-a568-2ef9ae061fbc/Aldrich-Regular.ttf?v=1741826177879"),
-    format("ttf");
-  font-family: Aldrich;
-}
+/* Fonts */
 
 @font-face {
   font-family: HK Grotesk;
@@ -35,47 +31,44 @@
 }
 
 @font-face {
-  src: url("https://cdn.glitch.global/9136e073-9a44-4dec-a568-2ef9ae061fbc/HomeVideoBold-R90Dv.ttf?v=1742139611578"),
-    format("ttf");
-  font-family: Home Video;
-}
-
-@font-face {
-  src: url("https://cdn.glitch.global/9136e073-9a44-4dec-a568-2ef9ae061fbc/GlitchGoblin-2O87v.ttf?v=1742151202781"),
-    format("ttf");
-  font-family: Glitch;
-}
-
-@font-face {
-  src: url("https://cdn.glitch.global/9136e073-9a44-4dec-a568-2ef9ae061fbc/HomeVideo-BLG6G.ttf?v=1742351077793"),
-    format("ttf");
-  font-family: Home Video Lite;
-}
-
-@font-face {
-  src: url("/assets/typographerwoodcutinitialsone.regular.ttf"),
+  src: url("/src/assets/typographerwoodcutinitialsone.regular.ttf"),
     format("ttf");
   font-family: Woodcut;
 }
 
 @font-face {
-  src: url("/assets/horbse.textured.ttf"),
+  src: url("/src/assets/horbse.textured.ttf"),
     format("ttf");
   font-family: Horbse;
 }
 
-/* Page structure */
-body {
-  font-family: HK Grotesk;
-  background-image: linear-gradient(black 20%, blue, #fff765);
-  /*  replace with background image made on procreate  */
+@font-face {
+  src: url("/src/assets/GoudyMediaeval-Regular.ttf"),
+    format("ttf");
+  font-family: Goudy;
 }
 
+@font-face {
+  src: url("/src/assets/JugendstilOrnamente.ttf"),
+    format("ttf");
+  font-family: Jugendstil;
+}
+
+/************* HOME *************/
 .wrapper {
   display: grid;
   place-items: center;
   margin: 0 1rem;
   min-height: 100vh;
+}
+
+body {
+  font-family: HK Grotesk;
+  font-size: 1.1rem;
+  background-color: var(--color-red);
+  background-image: url(/src/assets/ombre.jpeg);
+  background-repeat: repeat;
+  background-size: 40%;
 }
 
 .home {
@@ -85,15 +78,151 @@ body {
 }
 
 .home h1 {
-  font-family: Glitch, sans-serif;
+  font-family: "Horbse", sans-serif;
   font-weight: 400;
-  background-image: linear-gradient(#fff765, blue);
-  color: transparent;
-  background-clip: text;
+  color: var(--color-blue);
+  -webkit-text-stroke: var(--color-red) 0.5px;
   font-size: 100px;
   line-height: 105%;
-  margin-top: 8rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.roles {
+  font-family: Goudy, sans-serif;
+  font-size: 30px;
+  font-weight: 1000;
+  margin: 0px 0px 30px 0px;
+}
+
+.roles a:link {
+  color: var(--color-white);
+  transition: font-size 0.5s;
+  text-decoration: none;
+}
+
+.roles a:visited {
+  color: var(--color-white);
+}
+
+.roles a:hover {
+  color: var(--color-blue);
+  font-size: 35px;
+  transition: font-size 0.5s;
+}
+
+.roles p {
+  margin: 0px;
+}
+
+.instructions {
+  margin-top: 0;
+  max-width: 50rem;
+  width: 80vw;
+  color: var(--color-white);
+}
+
+.homeSubheader {
+  font-family: Goudy;
+  font-weight: 1000;
+  font-size: 30px;
+  color: var(--color-white);
+  margin: 6rem 0rem 0rem 0rem;
+}
+
+.techStack {
+  width: 5rem;
+  text-align: center;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(0deg);} 
+  10% {transform: rotate(4deg);} 
+  20% {transform: rotate(-4deg);} 
+  30% {transform: rotate(4deg);} 
+  40% {transform: rotate(-4deg);} 
+  50% {transform: rotate(4deg);}
+}
+
+.techStack img {
+  width: 3rem;
+}
+
+.techStack img:hover {
+  animation: wiggle 2s;
+  animation-iteration-count: infinite;
+}
+
+.techStack p {
+  margin: 5px 0 0 0;
+}
+
+.imgContainer {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  display: inline-block;
+  justify-content: space-evenly;
+  left: 0;
+  top:0;
+}
+
+#partyHat {
+  width: 17rem;
+  margin-left: 40vw;
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+
+#hearts {
+  width: 12rem;
+  transform: rotate(-10deg);
+  left: 0;
+  margin-left: 10rem;
+  border-radius: 10px;
+}
+
+@keyframes click {
+  0% {translate: 0px;} 
+  50% {translate: -3px 8px;}
+}
+
+@keyframes pop {
+  0% {transform: scaleX(1) scaleY(1);}
+  50% {transform: scaleX(1.1) scaleY(1.1);}
+}
+
+.email {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.email img {
+  width: 4rem;
+  margin-right: 1rem;
+}
+
+/************* PAGES *************/
+
+/* GENERAL **/
+h1 {
+  font-family: Horbse, sans-serif;
+  font-weight: 400;
+  color: var(--color-white);
+  font-size: 100px;
+  line-height: 105%;
+  margin-top: 2rem;
   margin-bottom: 1rem;
+  -webkit-text-stroke: var(--color-blue) 0.5px;
 }
 
 .page {
@@ -107,21 +236,33 @@ body {
   margin: 10px;
 }
 
-h1 {
-  font-family: Glitch, sans-serif;
-  font-weight: 400;
-  color: white;
-  font-size: 100px;
-  line-height: 105%;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+.blurbTracker {
+  font-family: Horbse;
+  justify-content: left;
+  font-size: 1.5rem;
 }
 
-.instructions {
-  margin-top: 0;
-  max-width: 50rem;
-  width: 80vw;
-  color: white;
+.btn {
+  font-family: Goudy;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 120%;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  border-radius: 20px;
+  background: var(--color-blue);
+  transition: width 0.5s, height 0.5s, background 0.5s;
+  color: var(--color-white);
+  margin-bottom: 5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--color-red);
+  width: 8.5rem;
+  height: 2.5rem;
+  transition: width 0.5s, height 0.5s, background 0.5s;
 }
 
 .container {
@@ -129,7 +270,7 @@ h1 {
   max-width: 40rem;
   min-height: 6rem;
   height: auto;
-  background: white;
+  background: var(--color-white);
   padding: 20px;
   margin: 20px;
   display: flex;
@@ -138,61 +279,48 @@ h1 {
   text-align: center;
   justify-content: center;
   border-radius: 40px;
+  background-image: url("./assets/plaid.jpg");
+  border: var(--color-blue) 2px solid;
 }
 
 .container p {
   margin-top: 0px;
+  color: var(--color-red);
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.subheader {
+  font-family: Horbse;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-red);
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .imageContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.artImage {
-  width: 30vw;
-  max-width: 15rem;
-  margin: 0 5px 5px 5px;
-  transition: width 0.5s, max-width 0.5s;
-}
-
-.artImage:hover {
-  cursor: pointer;
-}
-
-.gwcImage {
-  width: 35vw;
-  max-width: 20rem;
-  margin: 0 5px 5px 5px;
-  transition: width 0.5s, max-width 0.5s;
-}
-
-.elfOne-clicked {
-  width: 40vw;
-  max-width: 25rem;
-  transition: width 0.5s, max-width 0.5s;
-}
-
-.elfTwo-clicked {
-  width: 40vw;
-  max-width: 25rem;
-  transition: width 0.5s, max-width 0.5s;
-}
-
-.subheader {
-  font-family: Home Video, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: black;
+video {
+  width: auto;
+  max-width: 30rem;
+  height: 15rem;
+  border-radius: 20px;
 }
 
 iframe {
   width: 75vw;
   max-width: 30rem;
   height: 15rem;
+  border-radius: 20px;
 }
 
 .align {
@@ -211,63 +339,50 @@ iframe {
 }
 
 .summaryContainer p {
-  border-top: 1px blue solid;
-  padding-top: 1rem;
+  border-top: 1px var(--color-red) solid;
 }
 
-.blurbTracker {
-  font-family: Home Video, sans-serif;
-  justify-content: left;
-  font-size: 1.5rem;
+.summaryContainer a {
+  color: var(--color-blue);
 }
 
-.btn {
-  font-family: Home Video Lite, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  width: 8rem;
-  height: 2rem;
-  border: none;
-  border-radius: 20px;
-  background: blue;
-  transition: width 0.5s, height 0.5s, background 0.5s;
-  color: white;
-  margin-bottom: 5rem;
+/* ART **/
+.artImage {
+  width: 30vw;
+  max-width: 15rem;
+  margin: 0 5px 5px 5px;
+  transition: width 0.5s, max-width 0.5s;
+}
+
+.artImage:hover {
   cursor: pointer;
 }
 
-.btn:hover {
-  background: #fff765;
-  color: black;
-  width: 8.5rem;
-  height: 2.5rem;
-  transition: width 0.5s, height 0.5s, background 0.5s;
+.elfOne-clicked {
+  width: 40vw;
+  max-width: 25rem;
+  transition: width 0.5s, max-width 0.5s;
 }
 
-.roles {
-  font-family: Home Video, sans-serif;
+.elfTwo-clicked {
+  width: 40vw;
+  max-width: 25rem;
+  transition: width 0.5s, max-width 0.5s;
 }
 
-.roles a:link {
-  color: #fff765;
-  transition: font-size 0.5s;
-}
+/* .gwcImage {
+  width: 35vw;
+  max-width: 20rem;
+  margin: 0 5px 5px 5px;
+  transition: width 0.5s, max-width 0.5s;
+} */
 
-.roles a:visited {
-  color: #fff765;
-}
-
-.roles a:hover {
-  color: blue;
-  font-size: 30px;
-  transition: font-size 0.5s;
-}
+/************* HEADER/FOOTER *************/
 
 .header {
   display: flex;
-  width: auto;
-  background-color: rgb(0, 0, 0, 0.5);
-  color: white;
+  width: fit-content;
+  background-color: rgba(67, 17, 17, 0.8);
   position: sticky;
   top: 0;
   border-radius: 20px;
@@ -275,18 +390,18 @@ iframe {
 }
 
 .header a {
-  font-family: Home Video Lite, sans-serif;
+  font-family: Horbse, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.3rem;
-  color: white;
+  color: var(--color-green);
   text-decoration: none;
   border-style: none;
   transition: color 0.5s;
 }
 
 .header a:hover {
-  color: orange;
+  color: var(--color-blue);
   transition: color 0.5s;
 }
 
@@ -299,112 +414,6 @@ iframe {
   padding: 0 1rem;
 }
 
-.homeSubheader {
-  font-family: Home Video, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: white;
-  margin-top: 7rem;
-}
-
-.techStack {
-  width: 5rem;
-  text-align: center;
-  display: inline-block;
-  margin-top: 1rem;
-}
-
-@keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(4deg);
-  }
-  20% {
-    transform: rotate(-4deg);
-  }
-  30% {
-    transform: rotate(4deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
-}
-
-.techStack img {
-  width: 3rem;
-}
-
-.techStack img:hover {
-  animation: wiggle 2s;
-  animation-iteration-count: infinite;
-}
-
-.techStack p {
-  margin: 5px 0 0 0;
-}
-
 .footer {
   padding: 3rem;
-}
-
-.imgContainer {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  left: 0;
-}
-
-#partyHat {
-  width: 15rem;
-  margin-left: 40vw;
-}
-
-#hearts {
-  width: 8rem;
-  margin-right: 80vw;
-  transform: rotate(-10deg);
-}
-
-#smile {
-  width: 5rem;
-  margin-left: 60vw;
-  animation: click 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: step-start;
-}
-
-@keyframes click {
-  0% {
-    translate: 0px;
-  }
-  50% {
-    translate: -3px 8px;
-  }
-}
-
-.email {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.email img {
-  width: 4rem;
-  margin-right: 1rem;
-}
-
-video {
-  width: 75vw;
-  max-width: 30rem;
-  height: 15rem;
 }
