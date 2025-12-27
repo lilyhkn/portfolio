@@ -6,16 +6,10 @@ const Pics = () => {};
 
 const ContainerPic = ({ text, tech, summary, pic, picc }) => {
   const [isClicked, setIsClicked] = useState(true);
-  const [isClickedTwo, setIsClickedTwo] = useState(true);
 
   const imgClass = classNames({
     artImage: true,
     "elfOne-clicked": !isClicked,
-  });
-
-  const imgClassTwo = classNames({
-    artImage: true,
-    "elfTwo-clicked": !isClickedTwo,
   });
 
   return (
@@ -30,14 +24,9 @@ const ContainerPic = ({ text, tech, summary, pic, picc }) => {
           onClick={() => setIsClicked(!isClicked)}
           src={pic}
         />
-        <img
-          className={imgClassTwo}
-          onClick={() => setIsClickedTwo(!isClickedTwo)}
-          src={picc}
-        />
       </div>
       <div className="summaryContainer">
-        <p>{summary}</p>
+        <p>{summary}<b>click to enlarge!</b></p>
       </div>
     </div>
   );
@@ -49,8 +38,8 @@ const Art = () => {
   const blurbs = [
     "here are my art projects!",
     "art has been a constant in my life for forever. mostly in traditional mediums such as ink, acrylic, and oil painting.",
-    "as i entered college and pursued my degree in studio art, i began to concentrate my major into a technical focus. i learned the creative coding language p5.js, took a electronic sculptural class using Arduino, and a video game design class for 3D modeling with animation and scripting in C#. post-grad, I’ve continued my pursuit into programming, learning languages such as HTML, CSS, JavaScript, and React to build more complex projects.",
-    "many of my art projects now overlap with my coding projects, since i often intertwine the two. please check out my coding page for a deeper look into those!",
+    "as i entered college and pursued my degree in studio art, i began to experiment into more technical areas such as digital painting, creative coding, electronic sculpture, and 3D modeling.",
+    "my favorite art to make is anything fantasy, witchy, or magical themed! please enjoy :)",
   ];
 
   const pics = {
@@ -86,11 +75,16 @@ const Art = () => {
       />
       <div className="align">
         <ContainerPic
-          text="Elf Series"
+          text="Elf #1"
           tech="procreate, illustration"
           pic={pics.elf[0]}
-          picc={pics.elf[1]}
-          summary="this is a glimpse into my love for illustration, created on procreate on the ipad. i enjoy fantastical, whimsical, and romantic themes in my art."
+          summary="this is a glimpse into my love for illustration, created on procreate on the ipad. i enjoy fantastical, whimsical, and romantic themes in my art. "
+        />
+        <ContainerPic
+          text="Elf #2"
+          tech="procreate, illustration"
+          pic={pics.elf[1]}
+          summary="another elf! this time: playing the flute. "
         />
         <ContainerVideo
           text="Witchy Work"

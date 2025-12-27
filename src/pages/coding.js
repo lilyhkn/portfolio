@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
+import sensorySerial from "../assets/IMG_5948.mp4"
 
 const Header = ({ text }) => {
   return <h1 className="page">{text}</h1>;
@@ -51,7 +52,7 @@ const Container = ({ preview, text, tech, summary, link, linkText }) => {
       <iframe allow="camera" src={preview}></iframe>
       <div className="summaryContainer">
         <p>{summary}</p>
-        <a href={link}>{linkText}</a>
+        <b><a href={link}>{linkText}</a></b>
       </div>
     </div>
   );
@@ -125,7 +126,7 @@ const Coding = () => {
           text="this website!"
           tech="react, html, css, javascript, wouter, classnames"
           preview={
-            "https://codesandbox.io/embed/y3z2qn?view=preview&module=%2Fsrc%2Fpages%2Fcoding.js"
+            "https://lilyhknportfolio.netlify.app/"
           }
           summary={summaries[1]}
         />
@@ -140,7 +141,7 @@ const Coding = () => {
         <ContainerVideo
           text="sensory serial"
           tech="p5.js, c++, arduino circuitry"
-          mov="assets/IMG_5948.mov"
+          mp4={sensorySerial}
           summary={summaries[3]}
         />
       </div>

@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
+import star1 from "../assets/stars/star1.png";
+import star2 from "../assets/stars/star2.png";
+import star3 from "../assets/stars/star3.png";
+import star4 from "../assets/stars/star4.png";
+import star5 from "../assets/stars/star5.png";
+import star6 from "../assets/stars/star6.png";
+import star7 from "../assets/stars/star7.png";
+import star8 from "../assets/stars/star8.png";
+import hearts from "../assets/hearts_plaid.png";
+import hero from "../assets/main plaid.png";
+import tile1 from "../assets/tiles/tile1.png";
+import tile2 from "../assets/tiles/tile2.png";
+import tile3 from "../assets/tiles/tile3.png";
+import tile4 from "../assets/tiles/tile4.png";
 
 const Subheader = ({ text, classname }) => {
   return <h2 className={classname}>{text}</h2>;
@@ -37,22 +51,23 @@ const Home = () => {
   return (
     <>
       <div className="imgContainer">
-        <img
-          id="partyHat"
-          src="https://cdn.glitch.global/9136e073-9a44-4dec-a568-2ef9ae061fbc/transparent.png?v=1743517728541"
-        />
-        <img
-          id="hearts"
-          src="https://cdn.glitch.global/9136e073-9a44-4dec-a568-2ef9ae061fbc/IMG_0451.png?v=1742313239096"
-        />
-        <img
-          id="smile"
-          src="https://cdn.glitch.global/9136e073-9a44-4dec-a568-2ef9ae061fbc/23712.png?v=1742317601799"
-        />
+        <img id="star5" src={star5} style={{animation:"wiggle 3s infinite step-start"}}/>
+        <img id="partyHat" src={hero}/>
+        <img id="star2" src={star1} style={{animation:"pop 2s infinite step-start", width: "5rem"}} />
+        <p></p>       
+        <img id="hearts" src={hearts} />
+        <img id="star3" src={star4} style={{marginLeft: "80vw", width: "5rem"}} />
+        <img id="star1" src={star2} style={{marginLeft: "60vw", width: "5rem"}} />
+        <img id="star2" src={star3} style={{marginRight: "60vw"}}/>
+        <img id="star6" src={star7} style={{animation:"wiggle 3s infinite step-start"}} />
+        <img id="star7" src={star6} style={{animation:"pop 2s infinite step-start", marginLeft: "9vw"}}/>
+        <img id="star8" src={star8} />
       </div>
 
       <div className="home">
-        <h1>hi, i'm lily</h1>
+        <div className="textContainer" style={{marginTop:"8rem"}}><img src={tile1} style={{width:"10%"}}/> 
+          <h1>lily nguyen</h1>
+        </div>
         <div className="instructions">
           <h2 className="roles">
             <Link href="/coding">amature programmer</Link>
@@ -61,15 +76,17 @@ const Home = () => {
             <p></p>
             <Link href="/gwc">hobby enthusiast</Link>
           </h2>
-          <p>
-            i am a 26 year old self-taught programmer, designer, and strategist
+          <p style={{margin: "0px"}}>
+            greetings! i am a 26 year old self-taught programmer, designer, and strategist
             that uses code and a keen design eye to get creative.{" "}
             <b>
               check out my pages to explore more of my projects and hobbies!
             </b>
           </p>
-
-          <Subheader text="tools" classname="homeSubheader" />
+          
+          <div className="textContainer"><img src={tile2} style={{width:"8%", margin: "6rem 0rem 0rem 0rem"}}/>
+            <Subheader text="TOOLS" classname="homeSubheader" />
+          </div>
           <p>a mix of coding and art-making software</p>
           <TechStack img={imgs[6]} text="milanote" />
           <TechStack img={imgs[6]} text="notion" />
@@ -78,10 +95,11 @@ const Home = () => {
           <TechStack img={imgs[8]} text="unity" />
           <TechStack img={imgs[9]} text="maya" />
           <TechStack img={imgs[6]} text="capcut" />
-          <TechStack img={imgs[6]} text="adobe suite" />
           {/* <TechStack img={imgs[14]} text="tinkerCAD" /> */}
 
-          <Subheader text="tech stack" classname="homeSubheader" />
+          <div className="textContainer"><img src={tile4} style={{width:"8%", margin: "6rem 0rem 0rem 0rem"}}/>
+            <Subheader text="TECH STACK" classname="homeSubheader" />
+          </div>
           <p>always learning, but here's where i'm at right now!</p>
           <TechStack img={imgs[0]} text="html" />
           <TechStack img={imgs[1]} text="css" />
@@ -95,10 +113,11 @@ const Home = () => {
           <TechStack img={imgs[15]} text="scratch" /> 
           <p>in the pipeline: typescript, tailwind, node.js, SQL</p> */}
 
-          <Subheader text="contact" classname="homeSubheader" />
+          <div className="textContainer"><img src={tile3} style={{width:"8%", margin: "6rem 0rem 0rem 0rem"}}/>
+            <Subheader text="CONTACT" classname="homeSubheader" />
+          </div>
           <div className="email">
-            <img src="https://cdn.glitch.global/9136e073-9a44-4dec-a568-2ef9ae061fbc/Untitled_Artwork.png?v=1742411054402" />{" "}
-            <p>lilyhknguyen@gmail.com</p>
+            <p><b>lilyhknguyen@gmail.com</b></p>
           </div>
         </div>
       </div>
